@@ -1,11 +1,8 @@
-import Circle, { Square, Page } from "@/components/Geo"
+import { GeoForm } from "@/components/GeoForm"
 
-
-const Log = () => {
+const Page = () => {
   return(
     <div>
-      <Page/><br/>
-
       <ul>
         <li>1 Item</li>
         <li>2 Item</li>
@@ -15,12 +12,11 @@ const Log = () => {
       </ul>
       <br/>
 
-      <Square/>
-      <Circle/>
+      <GeoForm/>
     </div>
   )
 }
 
-export default Log
+export default Page
 
 //npm run dev
