@@ -1,15 +1,11 @@
-function Page() {
-  return (
-    <div>
-      <h1 className="font-bold text-2xl">Olá Mundo</h1>
-      <h3>Olá Mundo Pequeno</h3>
-    </div>
-  )
-}
+import Circle, { Square, Page } from "@/components/Geo"
+
 
 const Log = () => {
   return(
     <div>
+      <Page/><br/>
+
       <ul>
         <li>1 Item</li>
         <li>2 Item</li>
@@ -17,8 +13,14 @@ const Log = () => {
         <li>4 Item</li>
         <li>5 Item</li>
       </ul>
+      <br/>
+
+      <Square/>
+      <Circle/>
     </div>
   )
 }
 
 export default Log
+
+//npm run dev
