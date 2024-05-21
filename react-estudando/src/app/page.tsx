@@ -1,4 +1,5 @@
 import { GeoForm } from "@/components/GeoForm"
+import { Person } from "@/components/Person"
 
 const Page = () => {
   return(
@@ -13,6 +14,7 @@ const Page = () => {
       <br/>
 
       <GeoForm/>
+      <Person/>
     </div>
   )
 }
