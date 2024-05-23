@@ -6,16 +6,9 @@ import { url } from "inspector"
 const Page = () => {
   return(
     <div>
-      <Card>
-        <>
-          <h3 className="text-3xl font-bold italic">Frase de Efeito</h3>
-          <p className="text-right text-sm">- Autor desconhecido</p>
-          <Person
-            name="Palmeiras"
-            roles={["Grande", "Gigante"]}
-          />
-        </>
-      </Card>
+      <Card
+        phrase="Frase de Motivação"
+      />
     </div>
   )
 }
@@ -23,3 +16,4 @@ const Page = () => {
 export default Page
 
 //npm run dev
+//shift + tab -voltar linha
