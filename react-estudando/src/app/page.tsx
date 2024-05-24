@@ -8,6 +8,7 @@ const Page = () => {
     <div>
       <Card
         phrase="Frase de Motivação"
+        author="jean"
       />
     </div>
   )
