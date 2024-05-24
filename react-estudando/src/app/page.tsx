@@ -6,14 +6,19 @@ import { peopleList } from "@/data/peopleList"
 
 const Page = () => {
 
+  const ubers = peopleList.filter(person => person.profession === "uber")
+
   return(
     <div className="text-3xl">
-      {peopleList.length > 0 &&
-        <ul>
-        {peopleList.map(person => 
-          <li key={person.id}>{person.name} - {person.profession}</li>
-        )}
-      </ul>
+      {ubers.length > 0 &&
+        <>
+          <h3>Lista de Uber:</h3>
+          <ul>
+            {ubers.map(person =>
+              <li> {person.name} </li>
+            )}
+          </ul>
+        </> 
       }
     </div>
   )
