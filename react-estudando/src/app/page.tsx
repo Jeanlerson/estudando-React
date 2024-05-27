@@ -14,7 +14,7 @@ const Page = () => {
     <div className="w-screen h-screen flex flex-col justify-center items-center
     bg-gradient-to-r from-sky-500 to-indigo-500">
       <NotaAle 
-      nota= {4.9}
+      nota= {3}
       />
     </div>
   )

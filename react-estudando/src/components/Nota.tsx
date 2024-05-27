@@ -8,7 +8,9 @@ export const NotaAle = ({nota}: Props) => {
 
     const notaInt = Math.floor(nota)
 
-    const stars = "😁".repeat(notaInt) + "😣".repeat(5 - notaInt)
+    const emojis = ["", "😣", "😐", "😒", "😊", "😁"]
+
+    const stars = `${emojis[notaInt]}`.repeat(notaInt) + "😶".repeat(5 - notaInt)
 
     return (
         <div className="w-96 border-2 border-white-600 p-3 text-3xl text-center">
