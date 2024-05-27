@@ -4,6 +4,7 @@ import { Person } from "@/components/Person"
 import { url } from "inspector"
 import { peopleList } from "@/data/peopleList"
 import { Hours } from "@/components/Hours"
+import { NotaAle } from "@/components/Nota"
 
 const Page = () => {
 
@@ -12,10 +13,12 @@ const Page = () => {
   return(
     <div className="w-screen h-screen flex flex-col justify-center items-center
     bg-gradient-to-r from-sky-500 to-indigo-500">
-      <Hours/>
+      <NotaAle 
+      nota= {4.9}
+      />
     </div>
   )
-
+  
 }
 
 export default Page
