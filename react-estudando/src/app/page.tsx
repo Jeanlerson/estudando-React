@@ -5,17 +5,18 @@ import { url } from "inspector"
 import { peopleList } from "@/data/peopleList"
 import { Hours } from "@/components/Hours"
 import { NotaAle } from "@/components/Nota"
+import { students } from "@/data/students"
+import { StudentTable } from "@/components/StudentTable"
 
 const Page = () => {
 
   const ubers = peopleList.filter(person => person.profession === "uber")
 
+  //const list = students.map(student => <li>{student.name}</li>)
+
   return(
-    <div className="w-screen h-screen flex flex-col justify-center items-center
-    bg-gradient-to-r from-sky-500 to-indigo-500">
-      <NotaAle 
-      nota= {3}
-      />
+    <div className="container mx-auto">
+      <StudentTable students={students}/>
     </div>
   )
   
