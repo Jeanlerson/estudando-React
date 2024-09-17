@@ -2,7 +2,7 @@ type Props = {
     name: string
     avatar?: string
     roles: string[]
-}
+};
 
 export const Person = ({
     name, 
@@ -21,5 +21,5 @@ export const Person = ({
                 <li>{roles[1]}</li>
             </ul>
         </div>
-    )
-}
+    );
+};

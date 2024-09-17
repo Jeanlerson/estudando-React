@@ -22,9 +22,13 @@ const Page = () => {
     </div>
     */
    <div>
-    <h1 className="text-6xl ">Hello World!!</h1>
-    <Hours/>
-    
+      <h1 className="font-bold text-6xl ">Hello World!!</h1>
+      
+      <Person
+        name="Palmeiras"
+        roles={['Maior Campeão do Brasil', '3x Campeão da Libertadores']}
+      />
+      
    </div>
   )
   
