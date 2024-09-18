@@ -7,7 +7,8 @@ type Props = {
 export const Person = ({
     name, 
     avatar = "https://www.plurisports.com.br/wp-content/uploads/2023/10/soccer-sociedade-esportiva-palmeiras-logo-wallpaper-preview.jpg",
-    roles}: Props) => {
+    roles
+}: Props) => {
 
     return(
         <div className="p-3">

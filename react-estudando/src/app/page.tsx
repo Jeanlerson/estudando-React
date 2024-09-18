@@ -24,9 +24,9 @@ const Page = () => {
    <div>
       <h1 className="font-bold text-6xl ">Hello World!!</h1>
       
-      <Person
-        name="Palmeiras"
-        roles={['Maior Campeão do Brasil', '3x Campeão da Libertadores']}
+      <Card
+        phrase="Pessoas são de mais"
+        author="Jeanlerson Santos"
       />
       
    </div>
