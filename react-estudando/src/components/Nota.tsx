@@ -1,16 +1,15 @@
 type Props = {
     nota: number
-}
+};
 
 export const NotaAle = ({nota}: Props) => {
-    if(nota > 5) nota = 5
-    if(nota < 0) nota = 0
+    if(nota > 5) nota = 5;
+    if(nota < 0) nota = 0;
 
-    const notaInt = Math.floor(nota)
+    const notaInt = Math.floor(nota);
+    const emojis = ["", "😣", "😐", "😒", "😊", "😁"];
 
-    const emojis = ["", "😣", "😐", "😒", "😊", "😁"]
-
-    const stars = `${emojis[notaInt]}`.repeat(notaInt) + "😶".repeat(5 - notaInt)
+    const stars = `${emojis[notaInt]}`.repeat(notaInt) + "😶".repeat(5 - notaInt);
 
     return (
         <div className="w-96 border-2 border-white-600 p-3 text-3xl text-center">
@@ -19,5 +18,5 @@ export const NotaAle = ({nota}: Props) => {
                 {stars}
             </div>
         </div>
-    )
-}
+    );
+};

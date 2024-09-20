@@ -6,4 +6,4 @@ export const peopleList: Person[] = [
     { id: 3, name: "fulano", profession: "motorista"},
     { id: 4, name: "aiando", profession: "uber"},
     { id: 5, name: "deiando", profession: "motoboy"}
-]
+];
