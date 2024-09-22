@@ -10,7 +10,7 @@ const Page = () => {
    <div className="w-screen h-screen flex flex-col justify-center
    items-center text-white bg-gradient-to-r from-sky-500 to-indigo-500">
       <h1 className="text-5xl font-bold">Lista de Produtos</h1>    
-      <ProductTable product={productList} /> 
+      <StudentTable students={students} /> 
    </div>
   )
   

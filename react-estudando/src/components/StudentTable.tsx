@@ -1,5 +1,6 @@
 import { Student } from "@/types/Student"
 import { table } from "console"
+import { Span } from "next/dist/trace"
 
 type Props = {
     students: Student[]
@@ -41,7 +42,13 @@ export const StudentTable = ({students}: Props) => {
                         </td>
                         <td className="p-3">{people.grade1.toFixed(1)}</td>
                         <td className="p-3">{people.grade2.toFixed(1)}</td>
-                        <td className="p-3 font-bold">{people.active ? ((people.grade1 + people.grade2) / 2).toFixed(1) : "--"}</td>
+                        <td className="p-3 font-bold">
+                            {people.active ? (
+                                <span className={`${((people.grade1 + people.grade2) / 2).toFixed(1) >= '7' ? "text-green-600" : "text-red-600"}`}>
+                                    {((people.grade1 + people.grade2) / 2).toFixed(1)}
+                                </span>
+                            ) : ("--")}
+                        </td>
                     </tr>
                 ))}
             </tbody>
