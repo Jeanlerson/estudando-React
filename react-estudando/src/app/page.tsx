@@ -1,16 +1,31 @@
-import { NotaAle } from "@/components/Nota"
-import { ProductTable } from "@/components/ProductTable";
-import { StudentTable } from "@/components/StudentTable";
-import { productList } from "@/data/productList";
-import { students } from "@/data/students";
+"use client"
+
+import { CustomButton } from "@/components/CunstomButton";
 
 const Page = () => {
+  function handleClick() {
+    alert("Funcionou!")
+  }
+  const avisar = (msg: string) => {
+    alert(msg)
+  }
+
+  const handleButton1 = () => alert("Clicou no Botão Diferenciado 1")
+  const handleButton2 = () => alert("Clicou no Botão Diferenciado 2")
+  const handleButton3 = () => alert("Clicou no Botão Diferenciado 3")
 
   return (
    <div className="w-screen h-screen flex flex-col justify-center
    items-center text-white bg-gradient-to-r from-sky-500 to-indigo-500">
-      <h1 className="text-5xl font-bold">Lista de Produtos</h1>    
-      <StudentTable students={students} /> 
+      <div className="bg-red-700 p-5 flex flex-col">
+        <button onClick={handleClick} className="p-3 bg-blue-700 rounded-md mb-3">Clique Aqui</button>
+        <button onClick={() => alert("Funcionou 2.0!")} className="p-3 bg-blue-700 rounded-md">Clique Aqui 2.0</button>
+        <button onClick={() => avisar('Mensagem Inserida')} className="p-3 bg-blue-700 rounded-md mt-3">Clique Aqui 3</button>
+      </div>
+
+      <CustomButton label="Clique Aqui Diferenciado 1" onClick={handleButton1}/>
+      <CustomButton label="Clique Aqui Diferenciado 2" onClick={handleButton2}/>
+      <CustomButton label="Clique Aqui Diferenciado 3" onClick={handleButton3}/>
    </div>
   )
   
