@@ -1,5 +1,5 @@
 "use client"
-
+import { useState } from "react";
 import { CustomButton } from "@/components/CunstomButton";
 
 const Page = () => {
@@ -10,13 +10,18 @@ const Page = () => {
     alert(msg)
   }
 
-  const handleButton1 = () => alert("Clicou no Botão Diferenciado 1")
-  const handleButton2 = () => alert("Clicou no Botão Diferenciado 2")
-  const handleButton3 = () => alert("Clicou no Botão Diferenciado 3")
+  const [backgroundColor, setBackgroundColor] = useState("bg-gradient-to-r from-sky-500 to-indigo-500");
+  const changeBackground = (colorClass: string) => {
+    setBackgroundColor(colorClass)
+  }
+
+  const handleButton1 = () => changeBackground("bg-red-500")
+  const handleButton2 = () => changeBackground("bg-green-500")
+  const handleButton3 = () => changeBackground("bg-yellow-500")
 
   return (
-   <div className="w-screen h-screen flex flex-col justify-center
-   items-center text-white bg-gradient-to-r from-sky-500 to-indigo-500">
+   <div className={`w-screen h-screen flex flex-col justify-center
+   items-center text-white ${backgroundColor}`}> 
       <div className="bg-red-700 p-5 flex flex-col">
         <button onClick={handleClick} className="p-3 bg-blue-700 rounded-md mb-3">Clique Aqui</button>
         <button onClick={() => alert("Funcionou 2.0!")} className="p-3 bg-blue-700 rounded-md">Clique Aqui 2.0</button>
