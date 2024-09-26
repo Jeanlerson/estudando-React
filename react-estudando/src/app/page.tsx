@@ -23,14 +23,31 @@ const Page = () => {
     event.preventDefault();
     alert("Mandando")
   }
+
+  const [count, setCount] = useState(0);
+  const handleClickButton = () => {
+    setCount(count + 1);
+  }
+  const handleClickButton2 = () => {
+    setCount(count + 2);
+  }
+  const handleClickButton3 = () => {
+    setCount(count + 4);
+  }
+  const handleClickButton4 = () => {
+    setCount(count - 1);
+  }
+
   return (
    <div className={`w-screen h-screen flex flex-col justify-center
    items-center text-white ${backgroundColor}`}> 
-      <h1 className="text-5xl mb-3">Form de Login</h1>
-      <form onSubmit={handleFormSubmit}>
-        <input type="text" />
-        <input className="ml-3" type="submit" value="Enviar"/>
-      </form>
+      <p className="text-5xl">{count}</p>
+      <div>
+        <button className="text-2xl bg-black p-3 m-3" onClick={handleClickButton}>+1</button>
+        <button className="text-2xl bg-black p-3 m-3" onClick={handleClickButton2}>+2</button>
+        <button className="text-2xl bg-black p-3 m-3" onClick={handleClickButton3}>+4</button>
+        <button className="text-2xl bg-black p-3 m-3" onClick={handleClickButton4}>-1</button>
+      </div>
    </div>
   );
   
