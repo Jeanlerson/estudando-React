@@ -1,6 +1,5 @@
 "use client"
 import { FormEvent, useState } from "react";
-import { CustomButton } from "@/components/CunstomButton";
 
 const Page = () => {
   function handleClick() {
@@ -15,6 +14,7 @@ const Page = () => {
     setBackgroundColor(colorClass)
   };
 
+  //Função que armazena cor de fundo
   const handleButton1 = () => changeBackground("bg-red-500");
   const handleButton2 = () => changeBackground("bg-green-500");
   const handleButton3 = () => changeBackground("bg-yellow-500");
