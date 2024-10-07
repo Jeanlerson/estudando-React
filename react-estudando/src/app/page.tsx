@@ -1,7 +1,10 @@
 "use client"
+import { FullName } from "@/types/FullName";
 import { FormEvent, useState } from "react";
 
 const Page = () => {
+
+  /*
   function handleClick() {
     alert("Funcionou!")
   };
@@ -38,8 +41,24 @@ const Page = () => {
   const handleClickButton4 = () => {
     setCount(count - 1);
   }
+  
+  */
+
+  const [fullName, setFullName] = useState<FullName>({ name: '', lastName: '' })
+
+  const handleClearButtonName = () => {
+    setFullName({ ...fullName, name: '' })
+  }
+  const handleClearButtonLastName = () => {
+    const fullNameClone = { ...fullName }
+    fullNameClone.lastName = ''
+
+    setFullName(fullNameClone)
+  }
 
   return (
+
+    /*
    <div className={`w-screen h-screen flex flex-col justify-center
    items-center text-white ${backgroundColor}`}> 
       <p className="text-5xl">{count}</p>
@@ -50,6 +69,30 @@ const Page = () => {
         <button className="text-2xl bg-black p-3 m-3" onClick={handleClickButton4}>-1</button>
       </div>
    </div>
+   */ 
+
+    <div className="w-screen h-screen flex flex-col justify-center
+      items-center text-white bg-gradient-to-r from-sky-500 to-indigo-500">
+        <input 
+          type="text"
+          placeholder="Nome"
+          className="border border-black p-3 text-2xl text-black rounded-md mb-3"
+          value={fullName.name}
+          onChange={e => setFullName({ ...fullName, name: e.target.value })} />
+
+        <input 
+          type="text"
+          placeholder="Sobrenome"
+          className="border border-black p-3 text-2xl text-black rounded-md mb-3"
+          value={fullName.lastName}
+          onChange={e => setFullName({ ...fullName, lastName: e.target.value })} />
+
+        <p>Meu nome completo é:</p>
+        <p>{fullName.name} {fullName.lastName}</p>
+
+        <button className="bg-black p-3 m-3" onClick={handleClearButtonName}>Limpar Nome</button>
+        <button className="bg-black p-3 m-3" onClick={handleClearButtonLastName}>Limpar Sobrenome</button>
+    </div>
   );
   
 };
