@@ -26,7 +26,8 @@ const Page = () => {
 
   const [count, setCount] = useState(0);
   const handleClickButton = () => {
-    setCount(count + 1);
+    setCount(count + 3);
+    setCount(c => c + 2)
   }
   const handleClickButton2 = () => {
     setCount(count + 2);
@@ -43,7 +44,7 @@ const Page = () => {
    items-center text-white ${backgroundColor}`}> 
       <p className="text-5xl">{count}</p>
       <div>
-        <button className="text-2xl bg-black p-3 m-3" onClick={handleClickButton}>+1</button>
+        <button className="text-2xl bg-black p-3 m-3" onClick={handleClickButton}>+5</button>
         <button className="text-2xl bg-black p-3 m-3" onClick={handleClickButton2}>+2</button>
         <button className="text-2xl bg-black p-3 m-3" onClick={handleClickButton3}>+4</button>
         <button className="text-2xl bg-black p-3 m-3" onClick={handleClickButton4}>-1</button>
