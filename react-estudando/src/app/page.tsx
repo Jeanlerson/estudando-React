@@ -49,7 +49,9 @@ const Page = () => {
 
   return (
 
-    <div></div>
+    <div>
+      ...
+    </div>
 
     /*
    <div className={`w-screen h-screen flex flex-col justify-center
