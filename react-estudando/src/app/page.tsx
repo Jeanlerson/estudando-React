@@ -55,7 +55,7 @@ const Page = () => {
 
       <section className="container max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {photoList.map(item => (
-          <div>...</div>
+          <div>{item.url}</div>
         ))}
       </section>
     </div>
