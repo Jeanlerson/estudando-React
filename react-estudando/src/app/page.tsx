@@ -1,4 +1,6 @@
 "use client"
+import { Modal } from "@/components/Modal";
+import { PhotoItem } from "@/components/PhotoItem";
 import { photoList } from "@/data/photoList";
 import { FullName } from "@/types/FullName";
 import { TodoItem } from "@/types/TodoItem";
@@ -46,18 +48,43 @@ const Page = () => {
   
   */ 
 
+  const [showModal, setShowModal] = useState(false)
+  const [imageOfModal, setImageOfModal] = useState('')
 
+  const openModal = (id: number) => {
+    const photo = photoList.find(item => item.id ===id)
+
+    if(photo) {
+      setImageOfModal(photo.url);
+      setShowModal(true);
+    }
+  }
+
+  const closeModal = () => {
+    setShowModal(false);
+  }
 
   return (
 
-    <div className="mx-2 bg-gradient-to-r from-sky-500 to-indigo-500">
+    <div>
       <h1 className="text-center text-3xl font-bold my-10">Fotos Intergalactios</h1>
 
       <section className="container max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {photoList.map(item => (
-          <div>{item.url }</div>
+          <PhotoItem
+            key={item.id}
+            photo={item}
+            onClick={() => openModal(item.id)}
+          />
         ))}
       </section>
+
+      {showModal &&
+        <Modal
+          image={imageOfModal}
+          closeModal={closeModal}
+        />
+      }
     </div>
 
     /*
