@@ -6,7 +6,7 @@ type Props = {
 export const Modal = ({image, closeModal}: Props) => {
     return(
         <div>
-            {image}
+            ...
         </div>
     )
 }
