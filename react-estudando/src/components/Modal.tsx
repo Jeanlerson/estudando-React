@@ -6,8 +6,8 @@ type Props = {
 export const Modal = ({image, closeModal}: Props) => {
     return(
         <div onClick={closeModal}>
-            <div>
-                ...
+            <div onClick={closeModal}>
+                {image}
             </div>
         </div>
     )
