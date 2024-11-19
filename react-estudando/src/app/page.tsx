@@ -79,6 +79,9 @@ const Page = () => {
           />
         ))}
       </section>
+      {showModal &&
+        <Modal image={imageOfModal} closeModal={closeModal}/>
+      }
 
       
     </div>
