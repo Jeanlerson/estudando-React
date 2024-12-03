@@ -2,6 +2,7 @@
 import { Modal } from "@/components/Modal";
 import { PhotoItem } from "@/components/PhotoItem";
 import { photoList } from "@/data/photoList";
+import { questionsList } from "@/data/questionsList";
 import { FullName } from "@/types/FullName";
 import { TodoItem } from "@/types/TodoItem";
 import { FormEvent, useState } from "react";
@@ -48,6 +49,8 @@ const Page = () => {
   
   */ 
 
+  /*
+
   const [showModal, setShowModal] = useState(false);
   const [imageOfModal, setImageOfModal] = useState('');
 
@@ -64,7 +67,29 @@ const Page = () => {
     setShowModal(false);
   }
 
+  */
+
+  const [currentQuestion, setCurrentQuestion] = useState(0)
+
   return (
+
+    <div className="w-full h-screen flex flex-col justify-center items-center bg-blue-600">
+      <h1 className="text-center text-3xl font-bold my-10"> Quiz de Futebol ⚽</h1>
+      <div className="w-full max-w-xl rounded-md bg-white text-black shadow shadow-black">
+        {questionsList.map(item => (
+          item.question
+        ))}
+        <div className="p-5">
+          Pergunta
+        </div>
+        <div className="p-5 text-center border-t border-gray-300">
+          {currentQuestion + 1} de {questionsList.length} perguntas.
+        </div>
+      </div>
+    </div>
+
+    /*   GALERIA DE FOTOS 
+
 
     <div className="text-white bg-gradient-to-r from-sky-500 to-indigo-500 p-5">
       <h1 className="text-center text-3xl font-bold my-10">Fotos Intergalactios</h1>
@@ -84,6 +109,9 @@ const Page = () => {
 
       
     </div>
+
+    */
+
 
     /*
    <div className={`w-screen h-screen flex flex-col justify-center
