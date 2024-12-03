@@ -48,11 +48,11 @@ const Page = () => {
   
   */ 
 
-  const [showModal, setShowModal] = useState(false)
-  const [imageOfModal, setImageOfModal] = useState('')
+  const [showModal, setShowModal] = useState(false);
+  const [imageOfModal, setImageOfModal] = useState('');
 
   const openModal = (id: number) => {
-    const photo = photoList.find(item => item.id ===id)
+    const photo = photoList.find(item => item.id === id)
 
     if(photo) {
       setImageOfModal(photo.url);
@@ -66,11 +66,10 @@ const Page = () => {
 
   return (
 
-    <div className="w-screen h-screen flex flex-col justify-center
-    items-center text-white bg-gradient-to-r from-sky-500 to-indigo-500">
+    <div className="text-white bg-gradient-to-r from-sky-500 to-indigo-500 p-5">
       <h1 className="text-center text-3xl font-bold my-10">Fotos Intergalactios</h1>
 
-      <section className="container max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section className="container max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
         {photoList.map(item => (
           <PhotoItem
             key={item.id}
