@@ -50,5 +50,15 @@ export const questionsList: Question[] = [
             'PSG'
         ],
         answer: 1
+    },
+    {
+        question: 'Qual time brasileiro possui mais mundiais?',
+        options: [
+            'Flamengo',
+            'São Paulo',
+            'Palmeiras',
+            'Santos'
+        ],
+        answer: 1
     }
 ]
