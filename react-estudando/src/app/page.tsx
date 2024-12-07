@@ -76,9 +76,6 @@ const Page = () => {
     <div className="w-full h-screen flex flex-col justify-center items-center bg-blue-600">
       <h1 className="text-center text-3xl font-bold my-10"> Quiz de Futebol ⚽</h1>
       <div className="w-full max-w-xl rounded-md bg-white text-black shadow shadow-black">
-        {questionsList.map(item => (
-          item.question
-        ))}
         <div className="p-5">
           Pergunta
         </div>
