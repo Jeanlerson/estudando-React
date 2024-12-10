@@ -78,9 +78,11 @@ const Page = () => {
       <div className="w-full max-w-xl rounded-md bg-white text-black shadow shadow-black">
         <div className="p-5">
           Pergunta
-          {questionsList.map(item => (
-            item.question
-          ))}
+          <div>
+            {questionsList.map(item => (
+              item.question
+            ))}
+          </div>
         </div>
         <div className="p-5 text-center border-t border-gray-300">
           {currentQuestion + 1} de {questionsList.length} perguntas.
