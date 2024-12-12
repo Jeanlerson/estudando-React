@@ -1,6 +1,7 @@
 "use client"
 import { Modal } from "@/components/Modal";
 import { PhotoItem } from "@/components/PhotoItem";
+import { QuestionItem } from "@/components/QuestionItem";
 import { photoList } from "@/data/photoList";
 import { questionsList } from "@/data/questionsList";
 import { FullName } from "@/types/FullName";
@@ -71,16 +72,21 @@ const Page = () => {
 
   const [currentQuestion, setCurrentQuestion] = useState(0)
 
+  const handleAnswer = (answer: number) => {
+
+  }
+
   return (
 
     <div className="w-full h-screen flex flex-col justify-center items-center bg-blue-600">
       <h1 className="text-center text-3xl font-bold my-10"> Quiz de Futebol ⚽</h1>
       <div className="w-full max-w-xl rounded-md bg-white text-black shadow shadow-black">
         <div className="p-5">
-          Pergunta
-        </div>
-        <div>
-          
+          <QuestionItem
+            question={questionsList[currentQuestion]}
+            count={currentQuestion + 1}
+            onAnswer={handleAnswer}
+          />
         </div>
         <div className="p-5 text-center border-t border-gray-300">
           {currentQuestion + 1} de {questionsList.length} perguntas.
