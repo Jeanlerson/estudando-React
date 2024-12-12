@@ -2,7 +2,7 @@ import { Question } from "@/types/Question";
 
 export const questionsList: Question[] = [
     {
-        question: 'Quantas copas do mundo Brasil possui?',
+        question: 'Quantas copas do mundo, Brasil possui?',
         options: [
             '3 copas',
             'nenhuma copa',
