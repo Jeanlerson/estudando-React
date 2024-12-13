@@ -2,6 +2,7 @@
 import { Modal } from "@/components/Modal";
 import { PhotoItem } from "@/components/PhotoItem";
 import { QuestionItem } from "@/components/QuestionItem";
+import { ResultsQuiz } from "@/components/ResultsQuiz";
 import { photoList } from "@/data/photoList";
 import { questionsList } from "@/data/questionsList";
 import { FullName } from "@/types/FullName";
@@ -70,10 +71,21 @@ const Page = () => {
 
   */
 
-  const [currentQuestion, setCurrentQuestion] = useState(0)
+  const [answers, setAnswers] = useState<number[]>([]);
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [showResult, setShowResult] = useState(false);
+
+  const loadNextQuestion = () => {
+    if(questionsList[currentQuestion + 1]) {
+      setCurrentQuestion(currentQuestion + 1);
+    } else {
+      setShowResult(true);
+    }
+  }
 
   const handleAnswer = (answer: number) => {
-
+    setAnswers([ ...answers, answer ]);
+    loadNextQuestion();
   }
 
   return (
@@ -82,11 +94,14 @@ const Page = () => {
       <h1 className="text-center text-3xl font-bold my-10"> Quiz de Futebol ⚽</h1>
       <div className="w-full max-w-xl rounded-md bg-white text-black shadow shadow-black">
         <div className="p-5">
-          <QuestionItem
-            question={questionsList[currentQuestion]}
-            count={currentQuestion + 1}
-            onAnswer={handleAnswer}
-          />
+          {!showResult &&
+            <QuestionItem
+              question={questionsList[currentQuestion]}
+              count={currentQuestion + 1}
+              onAnswer={handleAnswer}
+            />
+          }
+          {showResult && <ResultsQuiz question={questionsList} answers={answers} />}
         </div>
         <div className="p-5 text-center border-t border-gray-300">
           {currentQuestion + 1} de {questionsList.length} perguntas.
