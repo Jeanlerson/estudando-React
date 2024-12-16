@@ -6,8 +6,8 @@ type Props = {
 export const ResultsQuiz = ({question, answers} : Props) => {
     return(
         <div>
-            {question}
-            {answers}
+            <div>{question}</div>
+            <div>{answers}</div>
         </div>
     )
 }
