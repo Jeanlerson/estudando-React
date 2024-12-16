@@ -17,7 +17,7 @@ export const QuestionItem = ({question, count, onAnswer} : Props) => {
             setTimeout(() => {
                 onAnswer(key);
                 setSelectedAnswer(null);
-            }, 1500);
+            }, 1000);
         }
     }
 

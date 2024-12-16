@@ -88,6 +88,12 @@ const Page = () => {
     loadNextQuestion();
   }
 
+  const handleRestartButton = () => {
+    setAnswers([]);
+    setCurrentQuestion(0);
+    setShowResult(false);
+  }
+
   return (
 
     <div className="w-full h-screen flex flex-col justify-center items-center bg-blue-600">
@@ -101,10 +107,11 @@ const Page = () => {
               onAnswer={handleAnswer}
             />
           }
-          {showResult && <ResultsQuiz question={questionsList} answers={answers} />}
+          {showResult && <ResultsQuiz questions={questionsList} answers={answers} />}
         </div>
         <div className="p-5 text-center border-t border-gray-300">
-          {currentQuestion + 1} de {questionsList.length} perguntas.
+          {!showResult && `${currentQuestion + 1} de ${questionsList.length} perguntas.`}
+          {showResult && <button onClick={handleRestartButton} className="px-3 py2 rounded-md bg-blue-800 text-white">Reiniciar Quiz</button>}
         </div>
       </div>
     </div>
