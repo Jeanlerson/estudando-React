@@ -71,6 +71,8 @@ const Page = () => {
 
   */
 
+  /* --------------------PROJETO QUIZ-----------------
+
   const [answers, setAnswers] = useState<number[]>([]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showResult, setShowResult] = useState(false);
@@ -93,8 +95,14 @@ const Page = () => {
     setCurrentQuestion(0);
     setShowResult(false);
   }
+    */
 
   return (
+    <div>
+      ...
+    </div>
+    
+    /* QUIZ--------------------------
 
     <div className="w-full h-screen flex flex-col justify-center items-center bg-blue-600">
       <h1 className="text-center text-3xl font-bold my-10"> Quiz de Futebol ⚽</h1>
@@ -115,6 +123,8 @@ const Page = () => {
         </div>
       </div>
     </div>
+
+    */
 
     /*   GALERIA DE FOTOS 
 
