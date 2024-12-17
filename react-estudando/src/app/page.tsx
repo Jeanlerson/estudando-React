@@ -7,7 +7,7 @@ import { photoList } from "@/data/photoList";
 import { questionsList } from "@/data/questionsList";
 import { FullName } from "@/types/FullName";
 import { TodoItem } from "@/types/TodoItem";
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 
 const Page = () => {
 
@@ -97,13 +97,25 @@ const Page = () => {
   }
     */
 
+  const [age, setAge] = useState(0)
+  const [name, setName] = useState('jean')
+
+  useEffect(() => {
+    console.log('rodou o effect');
+  }, [age]);
+
   return (
-    <div>
-      ...
+    <div className="">
+      <p>Meu nome é {name}</p>
+      <p>Tenho {age} anos</p>
+      <hr />
+      <button className="px-3 m-3 py2 rounded-md bg-blue-800 text-white" onClick={() => setName('Jeanlerson')}>Nome certo</button>
+      <button className="px-3 m-3 py2 rounded-md bg-blue-800 text-white" onClick={() => setName('Jeanlerson')}>Nome certo</button>
+      <button className="px-3 m-3 py2 rounded-md bg-blue-800 text-white" onClick={() => setAge(19)}>Add Idade 19</button>
     </div>
     
     /* QUIZ--------------------------
-
+S
     <div className="w-full h-screen flex flex-col justify-center items-center bg-blue-600">
       <h1 className="text-center text-3xl font-bold my-10"> Quiz de Futebol ⚽</h1>
       <div className="w-full max-w-xl rounded-md bg-white text-black shadow shadow-black">
