@@ -105,10 +105,12 @@ const Page = () => {
   }, [age]);
 
   return (
-    <div className="">
-      <p>Meu nome é {name}</p>
-      <p>Tenho {age} anos</p>
-      <hr />
+    <div className="w-full h-screen flex flex-col justify-center items-center bg-blue-600">
+      <div className="mb-10">
+        <p>Meu nome é {name}</p>
+        <p>Tenho {age} anos</p>
+      </div>
+
       <button className="px-3 m-3 py2 rounded-md bg-blue-800 text-white" onClick={() => setName('Jeanlerson')}>Nome certo</button>
       <button className="px-3 m-3 py2 rounded-md bg-blue-800 text-white" onClick={() => setName('Jeanlerson')}>Nome certo</button>
       <button className="px-3 m-3 py2 rounded-md bg-blue-800 text-white" onClick={() => setAge(19)}>Add Idade 19</button>
