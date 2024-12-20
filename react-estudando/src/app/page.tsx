@@ -3,6 +3,7 @@ import { Modal } from "@/components/Modal";
 import { PhotoItem } from "@/components/PhotoItem";
 import { QuestionItem } from "@/components/QuestionItem";
 import { ResultsQuiz } from "@/components/ResultsQuiz";
+import { VideoPlayer } from "@/components/VideoPlayer";
 import { photoList } from "@/data/photoList";
 import { questionsList } from "@/data/questionsList";
 import { FullName } from "@/types/FullName";
@@ -97,31 +98,19 @@ const Page = () => {
   }
     */
 
-  const [age, setAge] = useState(0)
-  const [name, setName] = useState('jean')
+  const [playing, setPlaying] = useState(false);
 
-  useEffect(() => {
-    console.log('rodou o effect');
-  }, [age]);
-
-  useEffect(() => {
-    console.log('rodou o effect');
-  }, [age]);
-
-  useEffect(() => {
-    console.log('rodou o effect');
-  }, [age]);
-  
   return (
     <div className="w-full h-screen flex flex-col justify-center items-center bg-blue-600">
-      <div className="mb-10">
-        <p>Meu nome é {name}</p>
-        <p>Tenho {age} anos</p>
+      <div className="border border-white p-3 mb-4">
+        <p className="text-2xl mb-3">{playing ? 'RODANDO' : 'PAUSADO'}</p>
+        <button className="px-3 py2 rounded-md bg-blue-800 text-white" onClick={() => setPlaying(!playing)}>Play/Pause</button>
       </div>
 
-      <button className="px-3 m-3 py2 rounded-md bg-blue-800 text-white" onClick={() => setName('Jeanlerson')}>Nome certo</button>
-      <button className="px-3 m-3 py2 rounded-md bg-blue-800 text-white" onClick={() => setName('Jeanlerson')}>Nome certo</button>
-      <button className="px-3 m-3 py2 rounded-md bg-blue-800 text-white" onClick={() => setAge(19)}>Add Idade 19</button>
+      <VideoPlayer
+        src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+        isPlaying={playing}
+      />
     </div>
     
     /* QUIZ--------------------------
