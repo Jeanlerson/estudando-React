@@ -104,6 +104,14 @@ const Page = () => {
     console.log('rodou o effect');
   }, [age]);
 
+  useEffect(() => {
+    console.log('rodou o effect');
+  }, [age]);
+
+  useEffect(() => {
+    console.log('rodou o effect');
+  }, [age]);
+  
   return (
     <div className="w-full h-screen flex flex-col justify-center items-center bg-blue-600">
       <div className="mb-10">
