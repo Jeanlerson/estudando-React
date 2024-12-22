@@ -98,9 +98,13 @@ const Page = () => {
   }
     */
 
-  const [playing, setPlaying] = useState(false);
+//  const [playing, setPlaying] = useState(false);
 
   return (
+    <div>
+      ...
+    </div>
+    /* ------------------- USE EFFECT----------------------
     <div className="w-full h-screen flex flex-col justify-center items-center bg-blue-600">
       <div className="border border-white p-3 mb-4">
         <p className="text-2xl mb-3">{playing ? 'RODANDO' : 'PAUSADO'}</p>
@@ -112,6 +116,7 @@ const Page = () => {
         isPlaying={playing}
       />
     </div>
+    */
     
     /* QUIZ--------------------------
 S
