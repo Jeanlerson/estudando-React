@@ -8,6 +8,7 @@ import { photoList } from "@/data/photoList";
 import { questionsList } from "@/data/questionsList";
 import { FullName } from "@/types/FullName";
 import { TodoItem } from "@/types/TodoItem";
+import { Square } from "@/components/Square";
 import { FormEvent, useEffect, useState } from "react";
 
 const Page = () => {
@@ -100,9 +101,13 @@ const Page = () => {
 
 //  const [playing, setPlaying] = useState(false);
 
+
+  const [show, setShow] = useState(false);
+
   return (
-    <div className="w-full h-screen flex flex-col justify-center items-center bg-blue-600">
-      ...
+    <div className="">
+      <button onClick={() => setShow(!show)}>Mostrar/Ocultar</button>
+      {show && <Square/>}
     </div>
     /* ------------------- USE EFFECT----------------------
     <div className="w-full h-screen flex flex-col justify-center items-center bg-blue-600">
