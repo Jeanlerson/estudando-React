@@ -101,7 +101,7 @@ const Page = () => {
 //  const [playing, setPlaying] = useState(false);
 
   return (
-    <div>
+    <div className="w-full h-screen flex flex-col justify-center items-center bg-blue-600">
       ...
     </div>
     /* ------------------- USE EFFECT----------------------
