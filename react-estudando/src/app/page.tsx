@@ -102,14 +102,19 @@ const Page = () => {
 //  const [playing, setPlaying] = useState(false);
 
 
-  const [show, setShow] = useState(false);
+//  const [show, setShow] = useState(false);
 
   return (
+    <div>
+      ...
+    </div>
+    /* ------------------- USE EFFECT----------------------
+
     <div className="">
       <button onClick={() => setShow(!show)}>Mostrar/Ocultar</button>
       {show && <Square/>}
     </div>
-    /* ------------------- USE EFFECT----------------------
+
     <div className="w-full h-screen flex flex-col justify-center items-center bg-blue-600">
       <div className="border border-white p-3 mb-4">
         <p className="text-2xl mb-3">{playing ? 'RODANDO' : 'PAUSADO'}</p>
