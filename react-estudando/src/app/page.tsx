@@ -9,8 +9,9 @@ import { questionsList } from "@/data/questionsList";
 import { FullName } from "@/types/FullName";
 import { TodoItem } from "@/types/TodoItem";
 import { Square } from "@/components/Square";
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useEffect, useReducer, useState } from "react";
 import { Item } from "@/types/Item";
+import { listReducer } from "@/reducers/listReducer";
 
 const Page = () => {
 
@@ -105,33 +106,7 @@ const Page = () => {
 
 //  const [show, setShow] = useState(false);
 
-  const [list, setList] = useState<Item[]>([]);
-
-  const addNewItem = (text: string) => {
-    setList([ ...list, { id: list.length, text, done: false}]);
-  }
-
-  const editItemText = (id: number, newText: string) => {
-    setList(
-      list.map((item) => {
-        if (item.id === id) item.text = newText;
-        return item;
-      })
-    )
-  }
-
-  const toggleItem = (id: number) => {
-    setList(
-      list.map((item) => {
-        if (item.id === id) item.done = !item.done;
-        return item;
-      })
-    )
-  }
-
-  const removeItem = (id: number) => {
-    setList( list.filter(item => item.id !== id) );
-  }
+  const [list, dispatch] = useReducer(listReducer, [])
 
   return (
     <div className="w-full h-screen flex flex-col justify-center items-center bg-blue-600">
