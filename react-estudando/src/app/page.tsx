@@ -155,7 +155,7 @@ const Page = () => {
             <input 
               type="checkbox" 
               className="w-6 h-6 mr-4"
-              defaultChecked={item.done}
+              checked={item.done}
               onClick={() => handleDoneChecbox(item.id)}
             />
             <p className="flex-1 text-lg">{item.text}</p>
