@@ -160,7 +160,7 @@ const Page = () => {
             />
             <p className="flex-1 text-lg">{item.text}</p>
             <button className="mx-4 text-white hover:text-gray-500">Editar</button>
-            <button className="mx-4 text-red-500 hover:text-gray-500">Excluir</button>
+            <button className="mx-4 border border-white text-red-500 hover:text-gray-500">Excluir</button>
           
           </li>
         ))}
