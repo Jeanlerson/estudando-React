@@ -131,6 +131,12 @@ const Page = () => {
     })
   }
 
+  const handleDoneChecked = (id: number) => {
+    dispatch({
+      type: 'toggleDone',
+      payload: { id }
+    })
+  }
   return (
     <div className="container mx-auto">
       <h1 className="text-center text-4xl my-4">Lista de Tarefas</h1>
