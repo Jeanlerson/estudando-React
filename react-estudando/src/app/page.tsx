@@ -128,15 +128,17 @@ const Page = () => {
     dispatch({
       type: 'toggleDone',
       payload: { id }
-    })
+    });
   }
 
-  const handleDoneChecked = (id: number) => {
-    dispatch({
-      type: 'toggleDone',
-      payload: { id }
-    })
+  const handleEdit = (id: number) => {
+    const item = list.find(it => it.id === id);
+    if(!item) return false;
+
+    const newText = window.prompt('Editar Tarefa', item.text);
+    if(newText?.trim() === '') return false;
   }
+
   return (
     <div className="container mx-auto">
       <h1 className="text-center text-4xl my-4">Lista de Tarefas</h1>
@@ -165,8 +167,8 @@ const Page = () => {
               onClick={() => handleDoneChecbox(item.id)}
             />
             <p className="flex-1 text-lg">{item.text}</p>
-            <button className="mx-4 text-white hover:text-gray-500">Editar</button>
-            <button className="mx-4 border border-white text-red-500 hover:text-gray-500">Excluir</button>
+            <button onClick={() => handleEdit(item.id)} className="mx-4 text-white hover:text-gray-500">Editar</button>
+            <button className="mx-4 p-1 border border-white text-red-500 hover:text-gray-500">Excluir</button>
 
           </li>
         ))}
