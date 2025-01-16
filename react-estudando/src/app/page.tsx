@@ -136,7 +136,15 @@ const Page = () => {
     if(!item) return false;
 
     const newText = window.prompt('Editar Tarefa', item.text);
-    if(newText?.trim() === '') return false;
+    if(!newText || newText.trim() === '') return false;
+
+    dispatch({
+      type: 'editText',
+      payload: {
+        id,
+        newText
+      }
+    });
   }
 
   return (
